@@ -19,10 +19,16 @@ body {
   height: 100vh;
   font-size: 62.5%; /* 10px */
   background-color: var(--main-bg);
+  word-break: keep-all;
   font-family : var(--main-font);
   font-weight: 500;
 }
 h1, h2, h3{
   font-family: var(--title-font);
   font-weight: 900;
+}
+button {
+  font-family : var(--main-font);
+  font-weight: 700;
+  cursor: pointer;
 }

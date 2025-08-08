@@ -1,1 +1,10 @@
-@im "/mixin.scss";/*# sourceMappingURL=style.css.map */
+.btn {
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  background-color: var(--tertiary-color);
+  color: var(--light-text);
+  font-size: 2rem;
+}
+.btn:hover {
+  background-color: var(--tertiary-darken);
+}/*# sourceMappingURL=style.css.map */
