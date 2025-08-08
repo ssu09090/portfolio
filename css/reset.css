@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+@import "root.css";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+body {
+  height: 100vh;
+  font-size: 62.5%; /* 10px */
+  background-color: var(--main-bg);
+  font-family : var(--main-font);
+  font-weight: 500;
+}
+h1, h2, h3{
+  font-family: var(--title-font);
+  font-weight: 900;
+}
