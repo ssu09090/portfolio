@@ -1,0 +1,23 @@
+// 페이지(섹션) 스타일
+@use "hub" as *;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+  @include tablet {
+    body{
+        
+    }
+  }
+  @include desktop {
+    body {
+        
+    }
+  }

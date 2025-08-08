@@ -25,6 +25,6 @@
   /* 컴포넌트 스타일 */
   --border-color : #888888;
   --border-radius: 20px;
-  --box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  --transition: all 0.3s ease;
+  --box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  --transition: all 0.5s;
 }

@@ -1,0 +1,18 @@
+// 컴포넌트 스타일 (버튼 등)
+
+@use "hub" as *;
+
+.btn {
+  @include btn-style();
+}
+
+@include tablet {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+@include desktop {
+  .btn {
+    font-size: 2rem;
+  }
+}

@@ -16,6 +16,7 @@ li {
   list-style: none;
 }
 body {
+  width: 100vw;
   height: 100vh;
   font-size: 62.5%; /* 10px */
   background-color: var(--main-bg);
@@ -29,6 +30,7 @@ h1, h2, h3{
 }
 button {
   font-family : var(--main-font);
-  font-weight: 700;
   cursor: pointer;
+  outline: none;
+  border: none;
 }
