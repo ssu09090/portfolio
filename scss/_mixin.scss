@@ -1,9 +1,10 @@
 //공용 믹스인
 
 //반응형
-$bp-mobile: 320px;
+$bp-mobile: 320px; //모바일 최소
 $bp-tablet: 768px;
-$bp-desktop: 1024px;
+$bp-laptop: 1024px; //노트북모니터
+$bp-desktop: 1440px;
 
 @mixin tablet {
   @media (min-width: $bp-tablet) {
@@ -16,10 +17,37 @@ $bp-desktop: 1024px;
   }
 }
 
-
-
 //컴포넌트
-@mixin btn-style($color:var(--light-text)){
+
+@mixin display($direction: column, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin top-text {
+  position: relative;
+  z-index: 5;
+}
+
+@mixin bg-img {
+}
+
+@mixin black-title {
+  color: var(--black-text);
+  -webkit-text-stroke: 2px var(--black-text);
+}
+@mixin pink-title {
+  color: var(--primary-color);
+  -webkit-text-stroke: 2px var(--primary-color);
+}
+@mixin yellow-title {
+  color: var(--secondary-darken);
+  -webkit-text-stroke: 2px var(--secondary-darken);
+}
+
+@mixin btn-style($color: var(--light-text)) {
   padding: 0.5rem 1rem;
   border-radius: 15px;
   background-color: var(--tertiary-color);
@@ -30,8 +58,4 @@ $bp-desktop: 1024px;
   &:hover {
     background-color: var(--tertiary-darken);
   }
-}
-
-@mixin pink-title(){
-  color: var(--primary-color);
 }

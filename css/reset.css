@@ -2,7 +2,6 @@
 
 @import "root.css";
 
-
 * {
   margin: 0;
   padding: 0;
@@ -18,18 +17,26 @@ li {
 body {
   width: 100vw;
   height: 100vh;
+  user-select: none;
   font-size: 62.5%; /* 10px */
   background-color: var(--main-bg);
   word-break: keep-all;
-  font-family : var(--main-font);
+  font-family: var(--main-font);
   font-weight: 500;
+  color: var(--main-text);
+  position: relative;
 }
-h1, h2, h3{
+h1,
+h2 {
   font-family: var(--title-font);
   font-weight: 900;
 }
+h3 {
+  font-family: var(--sub-font);
+  font-weight: 700;
+}
 button {
-  font-family : var(--main-font);
+  font-family: var(--main-font);
   cursor: pointer;
   outline: none;
   border: none;

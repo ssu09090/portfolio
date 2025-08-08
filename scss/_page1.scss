@@ -1,0 +1,178 @@
+// 페이지(섹션) 스타일
+
+@use "hub" as *;
+
+//모바일 min-width 320px
+//노트북모니터 min-width 1024px;
+
+.gsap1 .gsap-img img {
+  transform-origin: 50% 50%;
+  display: inline-block;
+}
+
+//기본 스타일
+body {
+  @include display();
+  text-align: center;
+  margin: 0 auto;
+  main {
+    @include display();
+    .cover > * {
+      position: relative;
+    }
+    .cover {
+      min-height: 100vh;
+      position: relative;
+      @include display(column);
+      margin-top: 5rem;
+      padding: 5rem 0;
+      gap: 5rem;
+      .cover-title {
+        h2 {
+          font-size: 1.7rem;
+          color: var(--secondary-darken);
+          -webkit-text-stroke: 1px var(--secondary-darken);
+        }
+        h1 {
+          font-size: 3.8rem;
+          @include black-title;
+        }
+      }
+      P {
+        font-size: 1.2rem;
+      }
+      .cover-bg-img {
+        position: absolute;
+        z-index: 5;
+        img {
+          position: absolute;
+          width: 200px;
+        }
+        img:nth-child(1) {
+          top: 100px;
+          left: -200px;
+        }
+        img:nth-child(2) {
+          top: -300px;
+          left: -200px;
+        }
+        img:nth-child(3) {
+          right: -200px;
+          bottom: -350px;
+        }
+      }
+    }
+  }
+}
+
+// 태블릿 버전
+@include tablet {
+  body {
+    main {
+      @include display();
+      .cover > * {
+        @include top-text;
+      }
+      .cover {
+        min-height: 100vh;
+        position: relative;
+        @include display(column, space-around);
+        margin-top: 10rem;
+        padding: 10rem 0;
+        .cover-title {
+          h2 {
+            font-size: 2.5rem;
+            @include yellow-title;
+          }
+          h1 {
+            font-size: 5.6rem;
+            @include black-title;
+          }
+        }
+        P {
+          font-size: 1.5rem;
+        }
+        .cover-bg-img {
+          position: absolute;
+          z-index: 1;
+          pointer-events: none;
+          img {
+            position: absolute;
+            user-select: none;
+          }
+          img:nth-child(1) {
+            top: -100px;
+            left: -400px;
+            width: 300px;
+          }
+          img:nth-child(2) {
+            top: -500px;
+            left: -420px;
+            width: 300px;
+          }
+          img:nth-child(3) {
+            right: -400px;
+            bottom: -300px;
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 데스크탑 버전
+@include desktop {
+  body {
+    main {
+      @include display();
+      .cover > * {
+        @include top-text;
+      }
+      .cover {
+        min-height: 100vh;
+        position: relative;
+        @include display(column, space-around);
+        margin-top: 15rem;
+        padding: 15rem 0;
+        .cover-title {
+          h2 {
+            font-size: 3rem;
+            @include yellow-title;
+          }
+          h1 {
+            font-size: 6.8rem;
+            @include black-title;
+          }
+        }
+        P {
+          font-size: 2rem;
+        }
+        .cover-bg-img {
+          position: absolute;
+          z-index: 1;
+          pointer-events: none;
+          img {
+            position: absolute;
+            user-select: none;
+          }
+          img:nth-child(1) {
+            top: -200px;
+            left: -700px;
+            width: 500px;
+          }
+          img:nth-child(2) {
+            top: -400px;
+            left: -650px;
+            width: 400px;
+          }
+          img:nth-child(3) {
+            right: -600px;
+            bottom: -350px;
+            width: 450px;
+          }
+        }
+      }
+    }
+  }
+}

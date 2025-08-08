@@ -14,6 +14,7 @@
   --primary-color : #E66C6C;
   --primary-light : #FF8B8B;
   --secondary-color : #FFD08C;
+  --secondary-darken : #FFA726;
   --tertiary-color : #BDA9CB;
   --tertiary-darken : #9E86B0;
 
@@ -23,8 +24,8 @@
   --black-text : #2B2B2B;
 
   /* 컴포넌트 스타일 */
-  --border-color : #888888;
-  --border-radius: 20px;
-  --box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-  --transition: all 0.5s;
+  --border : #888888;
+  --radius: 20px;
+  --shadow: 4px 4px 8px rgba(0,0,0,0.5);
+  --transition: all 0.4s;
 }
