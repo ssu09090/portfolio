@@ -2,6 +2,7 @@
 
 @use "hub" as *;
 
+//디바이스 별 버튼 폰트 크기
 .btn {
   @include btn-style();
 }

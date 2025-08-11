@@ -33,7 +33,7 @@ $bp-desktop: 1440px;
 
 @mixin bg-img {
 }
-
+// 티이틀 속성
 @mixin black-title {
   color: var(--black-text);
   -webkit-text-stroke: 2px var(--black-text);

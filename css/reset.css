@@ -16,7 +16,7 @@ li {
 }
 body {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   user-select: none;
   font-size: 62.5%; /* 10px */
   background-color: var(--main-bg);
@@ -24,7 +24,7 @@ body {
   font-family: var(--main-font);
   font-weight: 500;
   color: var(--main-text);
-  position: relative;
+  /* overflow-x: hidden; */
 }
 h1,
 h2 {
