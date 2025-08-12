@@ -1,0 +1,20 @@
+//메인 스타일
+
+@use "hub" as *;
+
+//모바일 min-width 320px
+//노트북모니터 min-width 1024px;
+
+main {
+  width: 100%;
+  @include display();
+  text-align: center;
+  margin: 0 auto;
+  gap: 5rem;
+  .part1 {
+    width: 100%;
+  }
+  .part2 {
+    width: 100%;
+  }
+}

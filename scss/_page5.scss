@@ -1,0 +1,180 @@
+@use "hub" as *;
+
+.projects {
+  @include display();
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+  #project{
+    height: 100px;
+  }
+  h1 {
+    margin: 1rem 0;
+    font-size: 3rem;
+    @include pink-title;
+  }
+  .pj-ment {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .warning {
+    line-height: 1.2;
+    padding: 1rem 3rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    background-color: var(--secondary-darken);
+    color: var(--light-text);
+  }
+  .projects-list {
+    @include display();
+    width: 90%;
+    .project-item {
+      @include display(column);
+      width: 100%;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      img {
+        width: 170px;
+        border-radius: var(--radius);
+        border-color: var(--border);
+        box-shadow: var(--shadow);
+      }
+      .project-detail {
+        @include display();
+        gap: 1rem;
+        line-height: 1.3;
+        width: 100%;
+        h3 {
+          color: var(--black-text);
+          font-size: 1.3rem;
+        }
+        .explain {
+          font-size: 0.8rem;
+        }
+        .use {
+          font-size: 0.8rem;
+          color: var(--border);
+        }
+        .btn-wrap {
+          @include display(row);
+          gap: 1rem;
+          .btn {
+            @include btn-style();
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//태블릿 버전
+@include tablet {
+  .projects {
+    @include display();
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    h1 {
+      margin: 2rem 0;
+      font-size: 4.5rem;
+      @include pink-title;
+    }
+    .pj-ment {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .warning {
+      line-height: 1.5;
+      padding: 1rem 3rem;
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
+    }
+    .projects-list {
+      @include display();
+      gap: 0;
+      width: 70%;
+      .project-item {
+        @include display(row, space-around);
+        gap: 5rem;
+        padding: 1rem 0;
+        .project-detail {
+          @include display();
+          align-items: flex-start;
+          text-align: left;
+          gap: 0.5rem;
+          line-height: 1.3;
+          width: 100%;
+          h3 {
+            font-size: 1.3rem;
+          }
+          .explain {
+            font-size: 1rem;
+            align-items: flex-start;
+            text-align: left;
+          }
+          .use {
+            font-size: 0.8rem;
+            color: var(--border);
+          }
+        }
+      }
+    }
+  }
+}
+
+//데스크탑 버전
+@include desktop {
+  .projects {
+    @include display();
+    gap: 1rem;
+    height: 100%;
+    h1 {
+      margin: 2rem 0;
+      font-size: 5.3rem;
+      @include pink-title;
+    }
+    .pj-ment {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .warning {
+      padding: 1rem 3rem;
+      line-height: 1.7;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .projects-list {
+      width: 65%;
+      .project-item {
+        @include display(row, space-around);
+        gap: 10rem;
+        img {
+          width: 200px;
+        }
+        .project-detail {
+          @include display();
+          align-items: flex-start;
+          text-align: left;
+          gap: 0.5rem;
+          line-height: 1.3;
+          width: 100%;
+          h3 {
+            font-size: 1.5rem;
+          }
+          .explain {
+            font-size: 1.2rem;
+            align-items: flex-start;
+            text-align: left;
+          }
+          .use {
+            font-size: 1rem;
+            color: var(--border);
+          }
+        }
+      }
+    }
+  }
+}

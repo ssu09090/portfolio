@@ -1,0 +1,146 @@
+@use "hub" as *;
+
+.skills {
+  height: 100%;
+  margin: 5rem 0;
+  .skills-bg-img {
+    position: relative;
+    z-index: -1;
+    img {
+      position: absolute;
+      width: 400px;
+    }
+    img:first-child {
+      top: 200px;
+      left: -20%;
+    }
+    img:nth-child(2) {
+      bottom: -1000px;
+      right: -20%;
+    }
+  }
+  .skills-bg-img2 {
+    position: relative;
+    z-index: -1;
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 40%;
+    }
+  }
+  h1 {
+    margin: 2rem 0;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    @include black-title;
+    span {
+      @include pink-title;
+    }
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 모바일 2열
+    justify-items: center;
+    gap: 1.5rem 0rem;
+    margin: 0 auto;
+    .skills-icon {
+      figure {
+        @include display();
+        width: 150px;
+        height: 200px;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        img {
+          width: 100px;
+        }
+        figcaption {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--main-text);
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .skills {
+    height: 100%;
+    #skills {
+      height: 100px;
+    }
+    h1 {
+      font-size: 4.5rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); // 모바일 2열
+      justify-items: center;
+      gap: 3rem 0rem;
+      .skills-icon {
+        figure {
+          width: 200px;
+          height: 200px;
+          gap: 1rem;
+          padding: 1rem 0;
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+          img {
+            width: 100px;
+          }
+          figcaption {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--main-text);
+          }
+        }
+      }
+    }
+  }
+}
+@include desktop {
+  .skills {
+    height: 100%;
+    .skills-bg-img {
+      position: relative;
+      z-index: -1;
+      img {
+        position: absolute;
+        width: 400px;
+      }
+      img:first-child {
+        top: 0px;
+        left: 0%;
+      }
+      img:nth-child(2) {
+        top: 200px;
+        right: 0%;
+      }
+    }
+    .skills-bg-img2 {
+      display: none;
+    }
+    h1 {
+      font-size: 5.3rem;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+      padding: 1rem 0;
+    }
+    .skills-track {
+      display: flex;
+      gap: 24px;
+      flex-wrap: nowrap;
+      will-change: transform;
+    }
+    .skills .skills-track > * {
+      flex: 0 0 auto;
+    }
+  }
+}
