@@ -1,4 +1,4 @@
-//메인 스타일
+//바디/메인 스타일
 
 @use "hub" as *;
 
@@ -16,5 +16,43 @@ main {
   }
   .part2 {
     width: 100%;
+  }
+  #qr-dialog {
+    border: none;
+    padding: 0;
+    background: transparent;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #qr-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+  }
+  #qr-dialog img {
+    width: 250px;
+    display: block;
+  }
+}
+.scrolltop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--primary-light);
+  color: var(--light-text);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  z-index: 999;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  &:hover{
+    background-color: var(--primary-color);
   }
 }

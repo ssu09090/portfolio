@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 a {
   text-decoration: none;
@@ -35,7 +36,9 @@ h3 {
   font-family: var(--sub-font);
   font-weight: 700;
 }
-img{user-select: none;}
+img {
+  user-select: none;
+}
 button {
   font-family: var(--main-font);
   cursor: pointer;

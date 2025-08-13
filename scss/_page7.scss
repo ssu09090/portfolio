@@ -39,6 +39,10 @@
         border-radius: var(--radius);
         border-color: var(--border);
         box-shadow: var(--shadow);
+        transition: var(--transition);
+        &:hover{
+          scale: 1.1
+        }
       }
       ul {
         @include display(row);

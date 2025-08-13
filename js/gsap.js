@@ -193,7 +193,44 @@ window.initGSAP = () => {
     };
   });
 
-  //이거 건들지 말기
+  //projects page5
+  // gsap.utils
+  //   .toArray(".projects .project-list .project-item")
+  //   .forEach((item) => {
+  //     gsap.fromTo(
+  //       item,
+  //       { opacity: 0, x: 100 }, // 시작 상태
+  //       {
+  //         opacity: 1,
+  //         x: 0,
+  //         duration: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: item,
+  //           start: "top 80%", // 화면 80% 지점에서 시작
+  //           toggleActions: "play none none reverse", // 스크롤 위로 가면 다시 사라짐
+  //           markers: true,
+  //         },
+  //       }
+  //     );
+  //   });
 
+  //about 영역을 가로로 스크롤 되게 처리
+  const $projectWrap = document.querySelector(".projects .projects-list");
+  const scrollWidth = $projectWrap.scrollWidth - window.innerWidth;
+  const horizonScroll = gsap.to($projectWrap, {
+    x: -scrollWidth,
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".projects",
+      start: "top top",
+      end: "+=" + scrollWidth,
+      pin: true,
+      scrub: true,
+      markers: true,
+    },
+  });
+
+  //이거 건들지 말기
   ScrollTrigger.refresh();
 };
