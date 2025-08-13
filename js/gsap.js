@@ -194,43 +194,60 @@ window.initGSAP = () => {
   });
 
   //projects page5
-  // gsap.utils
-  //   .toArray(".projects .project-list .project-item")
-  //   .forEach((item) => {
-  //     gsap.fromTo(
-  //       item,
-  //       { opacity: 0, x: 100 }, // 시작 상태
-  //       {
-  //         opacity: 1,
-  //         x: 0,
-  //         duration: 1,
-  //         ease: "power2.out",
-  //         scrollTrigger: {
-  //           trigger: item,
-  //           start: "top 80%", // 화면 80% 지점에서 시작
-  //           toggleActions: "play none none reverse", // 스크롤 위로 가면 다시 사라짐
-  //           markers: true,
-  //         },
-  //       }
-  //     );
-  //   });
+  const project = gsap.matchMedia();
 
-  //about 영역을 가로로 스크롤 되게 처리
-  const $projectWrap = document.querySelector(".projects .projects-list");
-  const scrollWidth = $projectWrap.scrollWidth - window.innerWidth;
-  const horizonScroll = gsap.to($projectWrap, {
-    x: -scrollWidth,
-    duration: 1,
-    scrollTrigger: {
-      trigger: ".projects",
-      start: "top top",
-      end: "+=" + scrollWidth,
-      pin: true,
-      scrub: true,
-      markers: true,
-    },
+  project.add("(min-width: 1440px)", () => {
+    const section = document.querySelector(".projects");
+    const cards = [
+      ".projects .project1",
+      ".projects .project2",
+      ".projects .project3",
+      ".projects .project4",
+      ".projects .project5",
+    ]
+      .map((sel) => document.querySelector(sel))
+      .filter(Boolean);
+    if (!section || !cards.length) return;
+
+    gsap.set(cards, { x: 2000 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 20%",
+        end: () => "+=" + window.innerHeight * Math.max(cards.length - 1, 1),
+        pin: true,
+        scrub: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      },
+    });
+
+    cards.forEach((card, i) => {
+      const stackOffset = 40 * i;
+      tl.fromTo(
+        card,
+        { x: 2000 },
+        { x: stackOffset, duration: 0.8, ease: "power3.out" },
+        i === 0 ? 0 : ">+=0.4"
+      );
+    });
+
+    return () => {
+      tl.scrollTrigger?.kill();
+      tl.kill();
+      gsap.set(cards, { clearProps: "transform" });
+    };
   });
 
-  //이거 건들지 말기
+  mm.add("(max-width: 1439px)", () => {
+    gsap.set(".projects .project-item", { clearProps: "transform" });
+  });
+
+
+  //clone page6
+  
+  //건들지말기
   ScrollTrigger.refresh();
+  
 };

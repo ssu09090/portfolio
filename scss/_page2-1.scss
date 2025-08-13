@@ -1,2 +1,395 @@
-@use 'hub' as *; 
+@use "hub" as *;
+.detail-cover {
+  height: 70vh;
+  @include tablet {
+    margin: 5rem 0;
+  }
+  @include desktop {
+    height: 60vh;
+    margin: 5rem 0;
+  }
+  .site-view {
+    @include display();
+    height: 100vh;
+    gap: 2rem;
+    .desktop-pic {
+      position: relative;
+      width: 70%;
+      overflow: hidden;
+      margin: 0 auto;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .pic {
+        z-index: -1;
+        position: absolute;
+        top: 3%;
+        left: 9%;
+        width: 82%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        will-change: transform;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          flex: 0 0 100%;
+        }
+      }
+    }
+    h1 {
+      @include black-title;
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+    .btn-wrap {
+      @include display(row);
+      gap: 1rem;
+      button {
+        @include btn-style();
+      }
+    }
+    ul {
+      margin: 2rem auto;
+      background-color: var(--point-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      @include display();
+      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+      li {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
 
+.tablet {
+  @include tablet {
+    height: 70vh;
+    margin: 5rem 0;
+  }
+  @include desktop {
+    height: 50vh;
+    margin: 5rem 0;
+  }
+  .site-view {
+    @include display();
+    height: 100vh;
+    gap: 1rem;
+    @include desktop {
+      @include display(row);
+      gap: 5rem;
+    }
+    .tablet-pic {
+      position: relative;
+      width: 60%;
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      @include desktop {
+        width: 30%;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+      .pic {
+        z-index: -1;
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        will-change: transform;
+        img {
+          flex: 0 0 100%;
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+    h1 {
+      @include black-title;
+      font-size: 3rem;
+    }
+    .btn-wrap {
+      @include display(row);
+      gap: 1rem;
+      button {
+        @include btn-style();
+      }
+    }
+    ul {
+      margin: 2rem auto;
+      background-color: var(--point-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      @include display();
+      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+      li {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.mobile {
+  @include tablet {
+    height: 100vh;
+    margin: 5rem 0;
+  }
+  @include desktop {
+    height: 70vh;
+    margin: 5rem 0;
+  }
+  .site-view {
+    height: 100vh;
+    @include display();
+    gap: 1rem;
+    @include desktop {
+      @include display(row-reverse);
+      gap: 5rem;
+    }
+    .mobile-pic {
+      position: relative;
+      width: 60%;
+      max-width: 90vw;
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 56px;
+      box-shadow: var(--shadow);
+      @include desktop {
+        width: 30%;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+      .pic {
+        z-index: -1;
+        position: absolute;
+        top: 1.5%;
+        left: 5%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        will-change: transform;
+        img {
+          flex: 0 0 100%;
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover; /* 프레임 채우기(크롭) */
+          object-position: center;
+          display: block;
+        }
+      }
+    }
+    h1 {
+      @include black-title;
+      font-size: 3rem;
+    }
+    .btn-wrap {
+      @include display(row);
+      gap: 1rem;
+      button {
+        @include btn-style();
+      }
+    }
+    ul {
+      margin: 2rem auto;
+      background-color: var(--point-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      @include display();
+      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+      li {
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+.design {
+  height: 30vh;
+  @include desktop {
+    height: 50vh;
+  }
+  @include display();
+  gap: 2rem;
+  h1 {
+    font-size: 3rem;
+    @include black-title;
+    @include tablet {
+      font-size: 4rem;
+    }
+  }
+  .system {
+    @include display();
+    gap: 2rem;
+    @include tablet {
+      @include display(row);
+    }
+    .design-color {
+      h3 {
+        font-size: 2rem;
+        margin: 1rem 0;
+      }
+      img {
+        width: 50%;
+        @include tablet {
+          width: 70%;
+        }
+      }
+    }
+    .design-typo {
+      h3 {
+        font-size: 2rem;
+        margin: 1rem 0;
+      }
+      img {
+        width: 50%;
+        @include tablet {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+.user {
+  height: 30vh;
+  @include tablet {
+    height: 50vh;
+  }
+  @include display();
+  gap: 3rem;
+  h1 {
+    font-size: 3rem;
+    @include black-title;
+    @include tablet {
+      font-size: 4rem;
+    }
+  }
+  img {
+    width: 80%;
+  }
+}
+.back {
+  height: 40vh;
+  @include tablet {
+    height: 50vh;
+  }
+  @include display();
+  gap: 3rem;
+  h1 {
+    font-size: 3rem;
+    @include black-title;
+    @include tablet {
+      font-size: 4rem;
+    }
+  }
+  .back-wrap {
+    @include display();
+    gap: 1rem;
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: 90%;
+    }
+    .back1,
+    .back2,
+    .back3 {
+      @include display();
+      gap: 0.5rem;
+      h3 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        font-weight: 900;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      @include tablet {
+        @include display();
+        gap: 1rem;
+        h3 {
+          font-size: 2rem;
+          color: var(--primary-color);
+          font-weight: 900;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 1.5rem;
+          line-height: 1.5;
+        }
+      }
+      @include desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        h3 {
+          font-size: 2rem;
+          color: var(--primary-color);
+          font-weight: 900;
+          text-align: center;
+        }
+        p {
+          text-align: left;
+          font-size: 1.5rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+.scrolltop {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+}
+.home-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+.scrolltop,
+.home-btn {
+  background-color: var(--primary-light);
+  color: var(--light-text);
+  padding: 1rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  z-index: 100;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  &:hover {
+    background-color: var(--primary-color);
+  }
+}

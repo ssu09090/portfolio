@@ -54,6 +54,7 @@ $bp-desktop: 1440px;
   color: $color;
   font-size: 1rem; //나중에 바꾸기
   font-weight: 700;
+  text-align:center;
   transition: var(--transition);
   &:hover {
     background-color: var(--tertiary-darken);

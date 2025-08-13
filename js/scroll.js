@@ -12,7 +12,7 @@ const scrollTopBtn = document.querySelector('.scrolltop');
 window.addEventListener('scroll', () => {
   const coverHeight = document.querySelector('.cover').offsetHeight;
   if (window.scrollY > coverHeight) {
-    scrollTopBtn.style.display = 'flex'; // flex나 block으로 변경 가능
+    scrollTopBtn.style.display = 'flex'; 
   } else {
     scrollTopBtn.style.display = 'none';
   }

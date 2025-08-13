@@ -1,8 +1,11 @@
 @use "hub" as *;
 
 .skills {
-  height: 100%;
+  min-height: 100vh;
   margin: 5rem 0;
+  #skills {
+    min-height: 10vh;
+  }
   .skills-bg-img {
     position: relative;
     z-index: -1;
@@ -67,10 +70,6 @@
 
 @include tablet {
   .skills {
-    height: 100%;
-    #skills {
-      height: 100px;
-    }
     h1 {
       font-size: 4.5rem;
     }
@@ -100,9 +99,11 @@
     }
   }
 }
+
+//데스크탑 버전
 @include desktop {
   .skills {
-    height: 100%;
+    min-height: 60vh;
     .skills-bg-img {
       position: relative;
       z-index: -1;

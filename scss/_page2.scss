@@ -6,6 +6,9 @@
   @include display();
   height: 100%;
   margin: 5rem 0;
+  #about {
+    height: 100px;
+  }
   h1 {
     @include pink-title;
     font-size: 3rem;
@@ -70,10 +73,8 @@
 @include tablet {
   .about-me {
     height: 100%;
+    margin: 2rem 0;
     @include display(column, flex-start);
-    #about{
-      height: 100px
-    }
     h1 {
       @include pink-title;
       font-size: 4.5rem;

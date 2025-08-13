@@ -61,7 +61,7 @@
   .cover {
     position: relative;
     @include display(column, space-around);
-    height: 80vh;
+    height: 70vh;
     margin: 5rem 0 0;
     .cover-title {
       h2 {
@@ -109,8 +109,8 @@
   }
   .cover {
     @include display(column, space-around);
-    height: 80vh;
-    margin-top:6rem ;
+    height: 70vh;
+    margin-top:5rem ;
     position: relative;
     .cover-title {
       h2 {
