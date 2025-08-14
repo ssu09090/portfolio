@@ -1,17 +1,51 @@
 @use "hub" as *;
-.detail-cover {
-  height: 70vh;
+
+.more1 {
+  position: absolute;
+  width: 400px;
+  z-index: -10;
+  top: 15%;
+  left: 0%;
   @include tablet {
-    margin: 5rem 0;
+    top: 25%;
+    left: 0%;
+    width: 600px;
   }
   @include desktop {
-    height: 60vh;
-    margin: 5rem 0;
+    top: 35%;
+    left: -10%;
+    width: 1000px;
+  }
+}
+.more2 {
+  position: absolute;
+  width: 500px;
+  z-index: -10;
+  top: 40%;
+  left: 0%;
+  @include tablet {
+  top: 50%;
+    left:0;
+    width: 600px;
+  }
+  @include desktop {
+    top: 80%;
+    left: -20%;
+    width: 1000px;
+  }
+}
+.detail-cover {
+  height: 100vh;
+
+  margin: 5rem 0;
+  @include desktop {
+    // height: 60vh;
   }
   .site-view {
     @include display();
-    height: 100vh;
+    // height: 100vh;
     gap: 2rem;
+    position: relative;
     .desktop-pic {
       position: relative;
       width: 70%;
@@ -70,18 +104,14 @@
 }
 
 .tablet {
-  @include tablet {
-    height: 70vh;
-    margin: 5rem 0;
-  }
   @include desktop {
     height: 50vh;
     margin: 5rem 0;
   }
   .site-view {
     @include display();
-    height: 100vh;
     gap: 1rem;
+    position: relative;
     @include desktop {
       @include display(row);
       gap: 5rem;
@@ -156,7 +186,8 @@
     margin: 5rem 0;
   }
   .site-view {
-    height: 100vh;
+    position: relative;
+    min-height: 100vh;
     @include display();
     gap: 1rem;
     @include desktop {
@@ -227,9 +258,9 @@
   }
 }
 .design {
-  height: 30vh;
+  height: 50vh;
   @include desktop {
-    height: 50vh;
+    height: 70vh;
   }
   @include display();
   gap: 2rem;
@@ -275,7 +306,7 @@
 .user {
   height: 30vh;
   @include tablet {
-    height: 50vh;
+    height: 70vh;
   }
   @include display();
   gap: 3rem;
@@ -291,9 +322,9 @@
   }
 }
 .back {
-  height: 40vh;
+  height: 30vh;
   @include tablet {
-    height: 50vh;
+    height: 70vh;
   }
   @include display();
   gap: 3rem;

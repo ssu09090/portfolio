@@ -194,24 +194,37 @@ window.initGSAP = () => {
   });
 
   //projects page5
+  const section = document.querySelector(".projects");
+
   const project = gsap.matchMedia();
+  let tl = null;
+  const cards = [
+    ".projects .project1",
+    ".projects .project2",
+    ".projects .project3",
+    ".projects .project4",
+    ".projects .project5",
+  ]
+    .map((sel) => document.querySelector(sel))
+    .filter(Boolean);
+  if (!section || !cards.length) return;
 
   project.add("(min-width: 1440px)", () => {
-    const section = document.querySelector(".projects");
-    const cards = [
-      ".projects .project1",
-      ".projects .project2",
-      ".projects .project3",
-      ".projects .project4",
-      ".projects .project5",
-    ]
-      .map((sel) => document.querySelector(sel))
-      .filter(Boolean);
-    if (!section || !cards.length) return;
+    // const section = document.querySelector(".projects");
+    // const cards = [
+    //   ".projects .project1",
+    //   ".projects .project2",
+    //   ".projects .project3",
+    //   ".projects .project4",
+    //   ".projects .project5",
+    // ]
+    //   .map((sel) => document.querySelector(sel))
+    //   .filter(Boolean);
+    // if (!section || !cards.length) return;
 
     gsap.set(cards, { x: 2000 });
 
-    const tl = gsap.timeline({
+    tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top 20%",
@@ -234,20 +247,32 @@ window.initGSAP = () => {
     });
 
     return () => {
+      console.log("kill");
       tl.scrollTrigger?.kill();
       tl.kill();
+      ScrollTrigger.refresh();
       gsap.set(cards, { clearProps: "transform" });
     };
   });
 
-  mm.add("(max-width: 1439px)", () => {
+  project.add("(max-width: 1439px)", () => {
     gsap.set(".projects .project-item", { clearProps: "transform" });
   });
 
+  const handlereset = () => {
+    gsap.set(cards, { x: 0 });
+    if (tl) {
+      tl.scrollTrigger?.kill();
+      tl.kill();
+    }
+    ScrollTrigger.refresh();
+    location.reload();
+  };
+
+  window.addEventListener("resize", handlereset);
 
   //clone page6
-  
+
   //건들지말기
   ScrollTrigger.refresh();
-  
 };

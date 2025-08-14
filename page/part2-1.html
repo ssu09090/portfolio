@@ -21,6 +21,7 @@
             </div>
           </div>
           <h1>Zero Flow</h1>
+          <img class="more1" src="../img/paint/paint2_5.png" alt="물감">
           <div class="btn-wrap">
             <a
               href="https://zrr.kr/HdtTYU"
@@ -53,12 +54,14 @@
               쇼핑몰
             </li>
           </ul>
-        </div>
+        </img>
       </section>
       <section class="page-section tablet">
         <div class="site-view">
+          <img class="more2" src="../img/paint/paint2_1.png" alt="물감">
           <div class="screen tablet-pic">
             <img src="../img/device/tablet.png" alt="테블릿" />
+            
             <div class="pic">
               <img src="../img/screen/zf_5.png" alt="사이트화면" />
               <img src="../img/screen/zf_6.png" alt="사이트화면" />
@@ -168,28 +171,39 @@
   </body>
   <script>
     const scrollTopBtn = document.querySelector(".scrolltop");
-  const cover = document.querySelector(".detail-cover");
+    const homeBtn = document.querySelector(".home-btn");
+    const cover = document.querySelector(".detail-cover");
 
-  if (scrollTopBtn) {
-    const toggleBtn = () => {
-      const threshold = cover ? cover.offsetHeight : 300;
-      scrollTopBtn.style.display = (window.scrollY > threshold) ? "flex" : "none";
+    const OPEN_HOME_IN_NEW_TAB = false;
+    const HOME_URL = "../index.html";
+
+    const threshold = () => (cover ? cover.offsetHeight : 300);
+
+    const toggleBtns = () => {
+      const show = window.scrollY > threshold();
+      [scrollTopBtn, homeBtn].forEach((btn) => {
+        if (btn) btn.style.display = show ? "flex" : "none";
+      });
     };
 
-    toggleBtn();
+    window.addEventListener("load", toggleBtns);
+    window.addEventListener("scroll", toggleBtns, { passive: true });
 
-    window.addEventListener("scroll", toggleBtn, { passive: true });
-
-    scrollTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    scrollTopBtn.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
+    if (scrollTopBtn) {
+      scrollTopBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
-  }
+      });
+    }
+
+    if (homeBtn) {
+      homeBtn.addEventListener("click", () => {
+        if (OPEN_HOME_IN_NEW_TAB) {
+          window.open(HOME_URL, "_blank", "noopener,noreferrer");
+        } else {
+          window.location.href = HOME_URL;
+        }
+      });
+    }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
