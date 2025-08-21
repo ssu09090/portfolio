@@ -1,0 +1,185 @@
+@use "hub" as *;
+
+//모바일
+.clone_page {
+  @include display();
+  margin: 0 auto;
+  overflow-x: hidden;
+  .clone_info {
+    @include display();
+    align-items: flex-start;
+    width: 90%;
+    gap: 1rem;
+    h1 {
+      @include black-title;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid var(--black-text);
+      @include tablet {
+        font-size: 4.5rem;
+      }
+      @include desktop {
+        font-size: 5.3rem;
+      }
+    }
+    div {
+      @include display();
+      align-items: flex-start;
+      h3 {
+        font-family: var(--main-font);
+        font-size: 1.3rem;
+        color: var(--black-text);
+        @include tablet {
+          font-size: 1.5rem;
+        }
+        @include desktop {
+          font-size: 1.7rem;
+        }
+      }
+      ul {
+        padding: 2rem;
+        @include display();
+        gap: 1rem;
+        align-items: flex-start;
+        text-align: left;
+
+        li {
+          font-size: 0.8rem;
+          line-height: 1.5;
+          a {
+            color: var(--primary-color);
+            font-size: 0.5rem;
+            @include tablet {
+              font-size: 1rem;
+            }
+          }
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include desktop {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  .btn-wrap {
+    margin-top: 3rem;
+    @include display(row);
+    gap: 1rem;
+    button {
+      @include btn-style();
+    }
+  }
+  .clone_view {
+    @include display();
+    gap: 2rem;
+    img {
+      position: absolute;
+      width: 80%;
+      box-shadow: var(--shadow);
+    }
+    .chap1 {
+      z-index: -4;
+      top: 160%;
+      left: 50%;
+      transform: rotate(-10deg) translateX(-50%);
+    }
+    .chap2 {
+      z-index: -3;
+      width: 30%;
+      top: 190%;
+      right: 70px;
+      transform: rotate(15deg);
+    }
+  }
+  .bgpaint1 {
+    position: absolute;
+    width: 300px;
+    z-index: -10;
+    top: 180%;
+    left: 10%;
+  }
+}
+
+//테블릿 
+@include tablet {
+.clone_page {
+  @include display();
+  margin: 0 auto;
+  overflow-x: hidden;
+  .clone_info {
+    @include display();
+    align-items: flex-start;
+    width: 90%;
+    gap: 1rem;
+    h1 {
+      @include black-title;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid var(--black-text);
+      @include tablet {
+        font-size: 4.5rem;
+      }
+      @include desktop {
+        font-size: 5.3rem;
+      }
+    }
+    div {
+      @include display();
+      align-items: flex-start;
+    }
+  }
+  .clone_view {
+    @include display();
+    gap: 2rem;
+    img {
+      position: absolute;
+      width: 80%;
+      box-shadow: var(--shadow);
+    }
+    .chap1 {
+      z-index: -4;
+      top: 120%;
+      left: 50%;
+      transform: rotate(-10deg) translateX(-50%);
+    }
+    .chap2 {
+      z-index: -3;
+      width: 30%;
+      top: 150%;
+      right: 70px;
+      transform: rotate(15deg);
+    }
+  }
+}}
+
+//데스크탑
+@include desktop {
+  .clone_page {
+    @include display();
+    margin: 0 auto;
+    .clone_view {
+      @include display();
+      gap: 2rem;
+      img {
+        position: absolute;
+        width: 80%;
+        box-shadow: var(--shadow);
+      }
+      .chap1 {
+        z-index: -4;
+        top: 100%;
+        left: 50%;
+        transform: rotate(-10deg) translateX(-50%);
+      }
+      .chap2 {
+        z-index: -3;
+        width: 30%;
+        top: 130%;
+        right: 100px;
+        transform: rotate(15deg);
+      }
+    }
+  }
+}

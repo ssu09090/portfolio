@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+:root{
+
+  /* 폰트 */
+  --title-font : "Quicksand";
+  --main-font : "Paperlogy";
+  --sub-font : "Raleway";
+
+  /* 색상 */
+  --main-bg : #FAF9F6;
+  --point-bg : #FFF3DE;
+
+  --primary-color : #E66C6C;
+  --primary-light : #FF8B8B;
+  --secondary-color : #FFD08C;
+  --secondary-darken : #FFA726;
+  --tertiary-color : #BDA9CB;
+  --tertiary-darken : #9E86B0;
+
+  /* 텍스트 색상 */
+  --main-text : #333333;
+  --light-text : #EEEEEE;
+  --black-text : #2B2B2B;
+
+  /* 컴포넌트 스타일 */
+  --border : #888888;
+  --radius: 20px;
+  --shadow: 4px 4px 8px rgba(0,0,0,0.3);
+  --transition: all 0.4s;
+}
+

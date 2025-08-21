@@ -1,0 +1,459 @@
+@use "hub" as *;
+
+main {
+  //디바이스 배경 물감 이미지
+  .more4 {
+    position: absolute;
+    width: 500px;
+    z-index: -10;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include tablet {
+      top: 20px;
+      width: 600px;
+    }
+    @include desktop {
+      top: 110px;
+      left: 300px;
+      width: 1000px;
+    }
+  }
+
+  .more5 {
+    position: absolute;
+    width: 400px;
+    z-index: -10;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include tablet {
+      top: 20px;
+      width: 600px;
+    }
+    @include desktop {
+      top: 110px;
+      left: 300px;
+      width: 1000px;
+    }
+  }
+
+  //첫번째 페이지 모바일
+  .screen-cover {
+    position: relative;
+    @include display();
+    gap: 5rem;
+    @include desktop {
+      @include display(row);
+      gap: 5rem;
+    }
+    .screen-summary {
+      @include display();
+      gap: 2rem;
+      h1 {
+        font-family: var(--main-font);
+        color: var(--black-text);
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        @include tablet {
+          font-size: 3rem;
+        }
+        @include desktop {
+          font-size: 4rem;
+        }
+      }
+      .btn-wrap {
+        @include display(row);
+        gap: 1rem;
+        button {
+          @include btn-style();
+        }
+      }
+      ul {
+        background-color: var(--point-bg);
+        border-radius: var(--radius);
+        padding: 2rem;
+        @include display();
+        gap: 1rem;
+        align-items: flex-start;
+        text-align: left;
+        li {
+          font-size: 0.8rem;
+          line-height: 1.5;
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include desktop {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    .screen-container {
+      height: 50vh;
+      perspective: 1000px;
+      justify-content: center;
+      display: flex;
+      align-items: flex-start;
+      .screen-view {
+        transform-style: preserve-3d;
+        position: relative;
+        transition: var(--transition);
+        div {
+          cursor: pointer;
+          border-radius: 17%;
+          box-shadow: var(--shadow);
+          @include display();
+          position: absolute;
+          top: 0px;
+          left: 50%;
+          transform: translateX(-50%);
+          backface-visibility: hidden;
+          .q{
+            width: 95%;
+          }
+        }
+        .screen-mockup1 {
+          z-index: 1;
+          img {
+            height: 50vh;
+          }
+          img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: -1;
+          }
+        }
+        .screen-mockup2 {
+          transform: translateX(-50%) rotateY(180deg);
+          img {
+            height: 50vh;
+          }
+          img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: -1;
+          }
+        }
+      }
+      .isflip {
+        transform: rotateY(180deg);
+      }
+
+      // 테블릿 부터
+      @include tablet {
+        .screen-view {
+          @include display(row);
+          align-items: flex-start;
+          transform-style: none;
+          @include display(row);
+          align-items: flex-start;
+          div {
+            cursor: auto;
+            backface-visibility: none;
+            left: 0;
+            transform: none;
+          }
+          .screen-mockup1 {
+            position: relative;
+            border-radius: 17%;
+            box-shadow: var(--shadow);
+            img {
+              height: 50vh;
+            }
+            img:nth-child(2) {
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translate(-50%);
+              z-index: -1;
+            }
+          }
+          .screen-mockup2 {
+            transform: none;
+            border-radius: 15%;
+            box-shadow: var(--shadow);
+            position: relative;
+            img {
+              height: 50vh;
+            }
+            img:nth-child(2) {
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translate(-50%);
+              z-index: -1;
+            }
+          }
+        }
+        .isflip {
+          transform: none;
+        }
+      }
+    }
+    .touch {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  //오버뷰
+  .overview {
+    margin-bottom: 10rem;
+    @include desktop {
+      margin-bottom: 5rem;
+    }
+    @include display();
+    gap: 3rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .overview-wrap {
+      @include display();
+      gap: 3rem;
+      width: 90%;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3rem;
+        width: 100%;
+      }
+      .overview1,
+      .overview2,
+      .overview3,
+      .overview4,
+      .overview5 {
+        @include display();
+        gap: 1rem;
+        h3 {
+          font-size: 1.3rem;
+          color: var(--primary-color);
+          font-weight: 900;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        @include tablet {
+          @include display();
+          gap: 1rem;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+        @include desktop {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: left;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  //디자인 시스템
+  .design {
+    gap: 2rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .system {
+      @include display();
+      gap: 2rem;
+      @include tablet {
+        gap: 3rem;
+      }
+      @include desktop {
+        @include display(row);
+      }
+      .design-color {
+        h3 {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+        img {
+          width: 80%;
+          @include tablet {
+            width: 90%;
+          }
+        }
+      }
+      .design-typo {
+        h3 {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+        img {
+          width: 80%;
+          @include tablet {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  //유저플로우
+  .user {
+    @include display();
+    gap: 3rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .flow-sc {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      justify-items: center;
+      @include tablet {
+        @include display(row);
+        gap: 2rem;
+      }
+      @include desktop {
+        gap: 3rem;
+      }
+      img {
+        width: 50%;
+        @include tablet {
+          max-width: 150px;
+        }
+        @include desktop {
+          max-width: 230px;
+        }
+      }
+    }
+    img {
+      width: 90%;
+      @include tablet {
+        max-width: 70%;
+      }
+    }
+  }
+
+  //회고
+  .retrace {
+    margin-bottom: 10rem;
+    @include desktop {
+      margin-bottom: 5rem;
+    }
+    @include display();
+    gap: 3rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .retrace-wrap {
+      @include display();
+      gap: 3rem;
+      width: 90%;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3rem;
+        width: 100%;
+      }
+      .retrace1,
+      .retrace2,
+      .retrace3 {
+        @include display();
+        gap: 1rem;
+        h3 {
+          font-size: 1.3rem;
+          color: var(--primary-color);
+          font-weight: 900;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        @include tablet {
+          @include display();
+          gap: 1rem;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+        @include desktop {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: left;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}

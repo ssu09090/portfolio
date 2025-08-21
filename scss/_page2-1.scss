@@ -1,0 +1,497 @@
+@use "hub" as *;
+
+main {
+  @include display();
+  margin: 0 auto;
+  gap: 10rem;
+
+  //뒤로가기
+  .back-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    border-radius: 15%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    background-color: var(--secondary-color);
+    &:hover {
+      background-color: var(--secondary-darken);
+    }
+  }
+  //디바이스 배경 물감 이미지
+  .more1 {
+    position: absolute;
+    width: 400px;
+    z-index: -10;
+    top: 15%;
+    left: 0%;
+    @include tablet {
+      top: 28%;
+      left: 0%;
+      width: 600px;
+    }
+    @include desktop {
+      top: 35%;
+      left: -10%;
+      width: 1000px;
+    }
+  }
+  .more2 {
+    position: absolute;
+    width: 400px;
+    z-index: -10;
+    top: 45%;
+    left: 0%;
+    @include tablet {
+      top: 50%;
+      left: 0;
+      width: 600px;
+    }
+    @include desktop {
+      top: 80%;
+      left: -20%;
+      width: 1000px;
+    }
+  }
+  .more3 {
+    position: absolute;
+    width: 400px;
+    z-index: -10;
+    top: 50%;
+    left: 0%;
+    @include tablet {
+      top: 52%;
+      left: 0;
+      width: 600px;
+    }
+    @include desktop {
+      top: 70%;
+      left: 50%;
+      width: 700px;
+    }
+  }
+
+  //첫화면 데스크탑
+  .detail-cover {
+    margin: 5rem auto;
+    .site-view {
+      @include display();
+      gap: 2rem;
+      position: relative;
+      .desktop-pic {
+        position: relative;
+        width: 70%;
+        overflow: hidden;
+        margin: 0 auto;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .pic {
+          z-index: -1;
+          position: absolute;
+          top: 3%;
+          left: 9%;
+          width: 82%;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          will-change: transform;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            flex: 0 0 100%;
+          }
+        }
+      }
+      h1 {
+        @include black-title;
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        @include tablet {
+          font-size: 3rem;
+        }
+        @include desktop {
+          font-size: 4rem;
+        }
+      }
+      .btn-wrap {
+        @include display(row);
+        gap: 1rem;
+        button {
+          @include btn-style();
+        }
+      }
+      ul {
+        width: 90%;
+        @include tablet {
+          width: auto;
+        }
+        margin: 2rem auto;
+        background-color: var(--point-bg);
+        border-radius: var(--radius);
+        padding: 2rem;
+        @include display();
+        gap: 1rem;
+        align-items: flex-start;
+        text-align: left;
+        li {
+          font-size: 0.8rem;
+          line-height: 1.5;
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include desktop {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  //두번째 페이지 테블릿
+  .tablet {
+    .site-view {
+      @include display();
+      gap: 1rem;
+      position: relative;
+      @include desktop {
+        @include display(row);
+        gap: 5rem;
+      }
+      .tablet-pic {
+        position: relative;
+        width: 60%;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 25px;
+        box-shadow: var(--shadow);
+        @include desktop {
+          width: 30%;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+        .pic {
+          z-index: -1;
+          position: absolute;
+          top: 10%;
+          left: 5%;
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          will-change: transform;
+          img {
+            flex: 0 0 100%;
+            width: 100%;
+            height: auto;
+            display: block;
+          }
+        }
+      }
+      .btn-wrap {
+        @include display(row);
+        gap: 1rem;
+        button {
+          @include btn-style();
+        }
+      }
+      ul {
+        width: 90%;
+        @include tablet {
+          width: auto;
+        }
+        margin: 2rem auto;
+        background-color: var(--point-bg);
+        border-radius: var(--radius);
+        padding: 2rem;
+        @include display();
+        gap: 1rem;
+        align-items: flex-start;
+        text-align: left;
+        li {
+          font-size: 0.8rem;
+          line-height: 1.5;
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include desktop {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  //세번째 페이지 모바일
+  .mobile {
+    @include tablet {
+      margin: 5rem 0;
+    }
+    .site-view {
+      position: relative;
+      min-height: 100vh;
+      @include display();
+      gap: 1rem;
+      @include desktop {
+        @include display(row-reverse);
+        gap: 5rem;
+      }
+      .mobile-pic {
+        position: relative;
+        width: 60%;
+        max-width: 90vw;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 56px;
+        box-shadow: var(--shadow);
+        @include desktop {
+          width: 30%;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+        .pic {
+          z-index: -1;
+          position: absolute;
+          top: 1.5%;
+          left: 5%;
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          will-change: transform;
+          img {
+            flex: 0 0 100%;
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+          }
+        }
+      }
+      .btn-wrap {
+        @include display(row);
+        gap: 1rem;
+        button {
+          @include btn-style();
+        }
+      }
+      ul {
+        width: 90%;
+        @include tablet {
+          width: auto;
+        }
+        margin: 2rem auto;
+        background-color: var(--point-bg);
+        border-radius: var(--radius);
+        padding: 2rem;
+        @include display();
+        gap: 1rem;
+        align-items: flex-start;
+        text-align: left;
+        li {
+          font-size: 0.8rem;
+          line-height: 1.5;
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include desktop {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  //디자인 시스템
+  .design {
+    gap: 2rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .system {
+      @include display();
+      gap: 2rem;
+      @include tablet {
+        gap: 3rem;
+      }
+      @include desktop {
+        @include display(row);
+      }
+      .design-color {
+        h3 {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+        img {
+          width: 80%;
+          @include tablet {
+            width: 90%;
+          }
+        }
+      }
+      .design-typo {
+        h3 {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+        img {
+          width: 80%;
+          @include tablet {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  //유저플로우
+  .user {
+    @include display();
+    gap: 3rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    img {
+      width: 90%;
+      @include tablet {
+        max-width: 70%;
+      }
+    }
+  }
+
+  //회고
+  .retrace {
+    margin-bottom: 10rem;
+    @include desktop {
+      margin-bottom: 5rem;
+    }
+    @include display();
+    gap: 3rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .retrace-wrap {
+      @include display();
+      gap: 3rem;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3rem;
+        width: 100%;
+      }
+      .retrace1,
+      .retrace2,
+      .retrace3 {
+        @include display();
+        gap: 1rem;
+        h3 {
+          font-size: 1.3rem;
+          color: var(--primary-color);
+          font-weight: 900;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        @include tablet {
+          @include display();
+          gap: 1rem;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+        @include desktop {
+          display: grid;
+                    grid-template-columns: 1fr 2fr;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: left;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  .scrolltop {
+    bottom: 6rem;
+  }
+  .home-btn {
+    bottom: 2rem;
+  }
+  .scrolltop,
+  .home-btn {
+    position: fixed;
+    right: 2rem;
+    background-color: var(--primary-light);
+    color: var(--light-text);
+    padding: 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 100;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    &:hover {
+      background-color: var(--primary-color);
+    }
+  }
+}

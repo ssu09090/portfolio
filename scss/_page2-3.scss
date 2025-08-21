@@ -1,0 +1,315 @@
+@use "hub" as *;
+
+main {
+  @include display();
+  margin: 0 auto;
+  gap: 10rem;
+
+  //디바이스 배경 물감 이미지
+  .more6 {
+    position: absolute;
+    width: 400px;
+    z-index: -10;
+    top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    @include tablet {
+      width: 600px;
+    }
+    @include desktop {
+      width: 700px;
+    }
+  }
+
+  //첫화면 데스크탑
+  .star_page {
+    margin: 5rem auto;
+    position: relative;
+    @include display();
+    gap: 5rem;
+    .star_info {
+      @include display();
+      gap: 2rem;
+      h1 {
+        font-family: var(--main-font);
+        color: var(--black-text);
+        font-size: 2.5rem;
+        margin-top: 2rem;
+        @include tablet {
+          font-size: 3rem;
+        }
+        @include desktop {
+          font-size: 4rem;
+        }
+      }
+      .btn-wrap {
+        @include display(row);
+        gap: 1rem;
+        button {
+          @include btn-style();
+        }
+      }
+    }
+    .star_view {
+      @include display();
+      gap: 2rem;
+      position: relative;
+      .desktop-pic {
+        position: relative;
+        width: 70%;
+        overflow: hidden;
+        margin: 0 auto;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .pic {
+          z-index: -1;
+          position: absolute;
+          top: 3%;
+          left: 9%;
+          width: 82%;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          will-change: transform;
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            flex: 0 0 100%;
+          }
+        }
+      }
+
+      ul {
+        margin: 2rem auto;
+        background-color: var(--point-bg);
+        border-radius: var(--radius);
+        padding: 2rem;
+        @include display();
+        gap: 1rem;
+        align-items: flex-start;
+        text-align: left;
+        li {
+          font-size: 0.8rem;
+          line-height: 1.5;
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include desktop {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  //오버뷰
+  .overview {
+    margin-bottom: 10rem;
+    @include desktop {
+      margin-bottom: 5rem;
+    }
+    @include display();
+    gap: 3rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .overview-wrap {
+      @include display();
+      gap: 3rem;
+      width: 90%;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3rem;
+        width: 100%;
+      }
+      .overview1,
+      .overview2,
+      .overview3,
+      .overview4,
+      .overview5 {
+        @include display();
+        gap: 1rem;
+        h3 {
+          font-size: 1.3rem;
+          color: var(--primary-color);
+          font-weight: 900;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        @include tablet {
+          @include display();
+          gap: 1rem;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+        @include desktop {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: left;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  //디자인 시스템
+  .design {
+    gap: 2rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .system {
+      @include display();
+      gap: 2rem;
+      @include tablet {
+        gap: 3rem;
+      }
+      @include desktop {
+        @include display(row);
+      }
+      .design-color {
+        h3 {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+        img {
+          width: 80%;
+          @include tablet {
+            width: 90%;
+          }
+        }
+      }
+      .design-typo {
+        h3 {
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+        img {
+          width: 80%;
+          @include tablet {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  //회고
+  .retrace {
+    margin-bottom: 10rem;
+    @include desktop {
+      margin-bottom: 5rem;
+    }
+    @include display();
+    gap: 3rem;
+    h1 {
+      @include black-title;
+      font-size: 2.5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .retrace-wrap {
+      @include display();
+      gap: 3rem;
+      @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3rem;
+        width: 100%;
+      }
+      .retrace1,
+      .retrace2,
+      .retrace3 {
+        @include display();
+        gap: 1rem;
+        h3 {
+          font-size: 1.3rem;
+          color: var(--primary-color);
+          font-weight: 900;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        @include tablet {
+          @include display();
+          gap: 1rem;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+        @include desktop {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 900;
+            text-align: center;
+          }
+          p {
+            text-align: left;
+            font-size: 1.5rem;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+}
