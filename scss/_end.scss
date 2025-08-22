@@ -18,16 +18,15 @@
     padding: 2rem 3.5rem;
     img {
       position: absolute;
+      width: 180px;
     }
     .pin1 {
       top: 55px;
       left: -40px;
-      width: 180px;
     }
     .pin2 {
       bottom: 0;
-      right: -50px;
-      width: 200px;
+      right: -60px;
     }
     h1 {
       font-size: 1.3rem;
@@ -41,6 +40,7 @@
       gap: 0.5rem;
       p {
         font-size: 1rem;
+        text-align: left
       }
     }
     .contact-link {
@@ -59,6 +59,7 @@
         .insta,
         .kakao,
         .line {
+            z-index: 5;
           img {
             width: 40px;
             height: 40px;
