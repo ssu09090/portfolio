@@ -1222,6 +1222,7 @@ main #qr-dialog img {
   font-size: 0.8rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  width: 95%;
 }
 .clone .warning {
   line-height: 1.2;
@@ -1660,16 +1661,15 @@ main #qr-dialog img {
 }
 .end .contact-wrap img {
   position: absolute;
+  width: 180px;
 }
 .end .contact-wrap .pin1 {
   top: 55px;
   left: -40px;
-  width: 180px;
 }
 .end .contact-wrap .pin2 {
   bottom: 0;
-  right: -50px;
-  width: 200px;
+  right: -60px;
 }
 .end .contact-wrap h1 {
   font-size: 1.3rem;
@@ -1687,6 +1687,7 @@ main #qr-dialog img {
 }
 .end .contact-wrap .contact-info p {
   font-size: 1rem;
+  text-align: left;
 }
 .end .contact-wrap .contact-link {
   display: flex;
@@ -1722,6 +1723,7 @@ main #qr-dialog img {
 .end .contact-wrap .contact-link .messenger .insta,
 .end .contact-wrap .contact-link .messenger .kakao,
 .end .contact-wrap .contact-link .messenger .line {
+  z-index: 5;
   transition: var(--transition);
 }
 .end .contact-wrap .contact-link .messenger .insta img,

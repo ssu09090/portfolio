@@ -1,5 +1,6 @@
 window.initGSAP = () => {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true });
 
   // cover - 순차적으로 커지고 작아지는 애니메이션
   gsap.set(".cover .cover-bg-img img", {
@@ -270,6 +271,7 @@ window.initGSAP = () => {
   };
 
   window.addEventListener("resize", handlereset);
+
 
   //clone page6
 
