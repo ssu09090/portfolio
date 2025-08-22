@@ -272,9 +272,12 @@ window.initGSAP = () => {
 
   window.addEventListener("resize", handlereset);
 
-
   //clone page6
 
   //건들지말기
-  ScrollTrigger.refresh();
+  ScrollTrigger.normalizeScroll(true);
+
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
 };
