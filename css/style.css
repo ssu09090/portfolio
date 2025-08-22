@@ -390,7 +390,7 @@ main #qr-dialog img {
     width: 500px;
   }
   .cover .cover-bg-img img:nth-child(2) {
-    top: -500px;
+    top: -400px;
     left: -650px;
     width: 400px;
   }
