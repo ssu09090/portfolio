@@ -3770,7 +3770,6 @@ main .retrace .retrace-wrap .retrace3 p {
     top: 150%;
     right: 70px;
     transform: rotate(15deg);
-    filter: brightness(1.25);
   }
 }
 @media (min-width: 1440px) {
