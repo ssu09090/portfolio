@@ -102,57 +102,60 @@
   }
 }
 
-//테블릿 
+//테블릿
 @include tablet {
-.clone_page {
-  @include display();
-  margin: 0 auto;
-  overflow-x: hidden;
-  .clone_info {
+  .clone_page {
     @include display();
-    align-items: flex-start;
-    width: 90%;
-    gap: 1rem;
-    h1 {
-      @include black-title;
-      font-size: 3rem;
-      margin-bottom: 2rem;
-      border-bottom: 3px solid var(--black-text);
-      @include tablet {
-        font-size: 4.5rem;
-      }
-      @include desktop {
-        font-size: 5.3rem;
-      }
-    }
-    div {
+    margin: 0 auto;
+    overflow-x: hidden;
+    .clone_info {
       @include display();
       align-items: flex-start;
+      width: 90%;
+      gap: 1rem;
+      h1 {
+        @include black-title;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        border-bottom: 3px solid var(--black-text);
+        @include tablet {
+          font-size: 4.5rem;
+        }
+        @include desktop {
+          font-size: 5.3rem;
+        }
+      }
+      div {
+        @include display();
+        align-items: flex-start;
+      }
+    }
+    .clone_view {
+      @include display();
+      gap: 2rem;
+      img {
+        position: absolute;
+        width: 80%;
+        box-shadow: var(--shadow);
+
+      }
+      .chap1 {
+        z-index: -4;
+        top: 120%;
+        left: 50%;
+        transform: rotate(-10deg) translateX(-50%);
+      }
+      .chap2 {
+        z-index: -3;
+        width: 30%;
+        top: 150%;
+        right: 70px;
+        transform: rotate(15deg);
+        filter: brightness(1.25);
+      }
     }
   }
-  .clone_view {
-    @include display();
-    gap: 2rem;
-    img {
-      position: absolute;
-      width: 80%;
-      box-shadow: var(--shadow);
-    }
-    .chap1 {
-      z-index: -4;
-      top: 120%;
-      left: 50%;
-      transform: rotate(-10deg) translateX(-50%);
-    }
-    .chap2 {
-      z-index: -3;
-      width: 30%;
-      top: 150%;
-      right: 70px;
-      transform: rotate(15deg);
-    }
-  }
-}}
+}
 
 //데스크탑
 @include desktop {
